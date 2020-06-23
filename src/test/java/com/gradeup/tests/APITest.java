@@ -41,7 +41,7 @@ public class APITest{
 			//System.out.println(i);
 			JSONObject jsonObj = responseArray.getJSONObject(i);
 			Map<String, String> lineData = new HashMap<>();
-			
+
 			try{
 				lineData.put("record_id", jsonObj.get("record_id").toString());
 			}
@@ -54,172 +54,199 @@ public class APITest{
 			catch(JSONException e) {
 				lineData.put("projectName", "");
 			}
-			
+
 			try{
 				lineData.put("projectType", jsonObj.get("projectType").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("projectType", "");
 			}
-			
+
 			try{
 				lineData.put("description", jsonObj.get("description").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("description", "");
 			}
-			
+
 			try{
 				lineData.put("sqft", jsonObj.get("sqft").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("sqft", "");
 			}
-			
+
 			try{
 				lineData.put("estimatedProjectValuation", jsonObj.get("estimatedProjectValuation").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("estimatedProjectValuation", "");
 			}
-			
+
 			try{
 				lineData.put("number", jsonObj.get("number").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("number", "");
 			}
-			
+
 			try{
 				lineData.put("noticeType", jsonObj.get("noticeType").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("noticeType", "");
 			}
-			
+
 			try{
 				lineData.put("address", jsonObj.get("address").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("address", "");
 			}
-			
+
 			try{
 				lineData.put("city", jsonObj.get("city").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("city", "");
 			}
-			
+
 			try{
 				lineData.put("state", jsonObj.get("state").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("state", "");
 			}
-			
+
 			try{
 				lineData.put("zipcode", jsonObj.get("zipcode").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("zipcode", "");
 			}
-			
+
 			try{
 				lineData.put("contact", jsonObj.get("contact").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("contact", "");
 			}
-			
+
 			try{
 				lineData.put("contactPhone", jsonObj.get("contactPhone").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("contactPhone", "");
 			}
-			
+
 			try{
 				lineData.put("contactEmail", jsonObj.get("contactEmail").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("contactEmail", "");
 			}
-			
+
 			try{
 				lineData.put("contactAddress", jsonObj.get("contactAddress").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("contactAddress", "");
 			}
-			
+
 			try{
 				lineData.put("owner", jsonObj.get("owner").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("owner", "");
 			}
-			
+
 			try{
 				lineData.put("architect", jsonObj.get("architect").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("architect", "");
 			}
-			
+
 			try{
 				lineData.put("openDate", jsonObj.get("openDate").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("openDate", "");
 			}
-			
+
 			try{
 				lineData.put("addedTimeStamp", jsonObj.get("addedTimeStamp").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("addedTimeStamp", "");
 			}
-			
+
 			try{
 				lineData.put("status", jsonObj.get("status").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("status", "");
 			}
-			
+
 			try{
 				lineData.put("closeDate", jsonObj.get("closeDate").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("closeDate", "");
 			}
-			
+
 			try{
 				lineData.put("link", jsonObj.get("link").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("link", "");
 			}
-			
+
 			try{
 				lineData.put("type", jsonObj.get("type").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("type", "");
 			}
-			
+
 			try{
 				lineData.put("constructionStartDate", jsonObj.get("constructionStartDate").toString());
 			}
 			catch(JSONException e) {
 				lineData.put("constructionStartDate", "");
 			}
-			
+
 			data.add(lineData);
 		}
-		
-		ExcelUtilities.WriteExcelDataInBulk(Constants.APIEXCELPATH, "Sheet1", "record_id", data);
+
+		//Column Index Mapping as per Excel
+		Map<String, Integer> columnIndexing = new HashMap<>();
+		columnIndexing.put("record_id",0);
+		columnIndexing.put("projectName",0);
+		columnIndexing.put("projectType",0);
+		columnIndexing.put("description",0);	
+		columnIndexing.put("sqft",0);
+		columnIndexing.put("estimatedProjectValuation",0);	
+		columnIndexing.put("number",0);
+		columnIndexing.put("noticeType",0);	
+		columnIndexing.put("address",0);	
+		columnIndexing.put("city",0);	
+		columnIndexing.put("state",0);	
+		columnIndexing.put("zipcode",0);	
+		columnIndexing.put("contact",0);
+		columnIndexing.put("contactPhone",0);
+		columnIndexing.put("contactEmail",0);
+		columnIndexing.put("contactAddress",0);
+		columnIndexing.put("owner",0);	
+		columnIndexing.put("architect",0);	
+		columnIndexing.put("openDate",0);	
+		columnIndexing.put("addedTimeStamp",0);
+		columnIndexing.put("status",0);
+		columnIndexing.put("closeDate",0);
+		columnIndexing.put("link",0);
+		columnIndexing.put("type",0);	
+		columnIndexing.put("constructionStartDate",0);
+		ExcelUtilities.WriteExcelDataInBulk(Constants.APIEXCELPATH, "Sheet1", "record_id", columnIndexing, data);
 
 		System.out.println(data);
 	}

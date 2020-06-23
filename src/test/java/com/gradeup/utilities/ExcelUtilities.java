@@ -246,7 +246,7 @@ public class ExcelUtilities {
 	 * @throws IOException
 	 * @throws InvalidFormatException
 	 */
-	public static boolean WriteExcelDataInBulk (String excelFilePath, String sheetName, String key, List<Map<String, String>> data) throws IOException, InvalidFormatException {
+	public static boolean WriteExcelDataInBulk (String excelFilePath, String sheetName, String key, Map<String, Integer> columnIndexing, List<Map<String, String>> data) throws IOException, InvalidFormatException {
 
 		File file;
 
@@ -267,11 +267,9 @@ public class ExcelUtilities {
 				row = sheet.createRow(lastRow+1); 
 				System.out.println(data.get(i).get(key) + " recordID not found in Excel");
 				Log.info(data.get(i).get(key) + " recordID not found in Excel");
-				int colIndex = 0;
 				for(String keyName: data.get(i).keySet()) {
-					row.createCell(colIndex).setCellValue(data.get(i).get(keyName));
+					row.createCell(columnIndexing.get(keyName)).setCellValue(data.get(i).get(keyName));
 					//System.out.println("Entered "+keyName + " as "+data.get(i).get(keyName));
-					colIndex++;
 				}
 			}
 			else {
