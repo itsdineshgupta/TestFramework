@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- parallel="methods" -->
+<suite name="gradeup" thread-count="2">
+
+	<listeners>
+		<listener class-name="com.gradeup.helpers.TestReport" />
+	</listeners>
+
+	<parameter name="browserType" value="chrome" />
+	<parameter name="os" value="windows" />
+
+	<test thread-count="5" name="tests">
+		<classes>
+
+			<class name="com.gradeup.configuration.PreConfig" />
+			<class name="com.gradeup.configuration.PostConfig" />
+			<class name="com.gradeup.pages.LoginPage" />
+
+
+			<class name="com.gradeup.tests.UITest" />
+			<methods>
+				<exclude name="UITest" />
+			</methods>
+			
+			<class name="com.gradeup.tests.APITest" />
+			<methods>
+				<include name="APITest" />
+			</methods>
+
+		</classes>
+
+	</test> <!-- TESTS -->
+</suite> <!-- GRADEUP -->
