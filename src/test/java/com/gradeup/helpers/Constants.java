@@ -21,12 +21,4 @@ public class Constants {
 
 	public static LocalDateTime ENDTIME = null;
 
-	public static String CPA_TRANSACTION_SECRET = "Q4b2arKtCfOp5Ms7hIKRD1Ov4SI3ISwJ";
-
-	public static String CPA_TRANSACTION_KEY = "v49rjm0M2k7RMSCpX3SKRUK3M7y8fp1m";
-
-	public static String MRCPA_SECRET = "TBxcighjX6tPK7c4JxYkAs7eT1cYs1Sd";
-
-	public static String MRCPA_KEY = "nG07kPX7KoUPj5Zx4Bb8V6w92AI6Yard";
-
 }
