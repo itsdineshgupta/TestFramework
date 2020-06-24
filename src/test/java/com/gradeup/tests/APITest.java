@@ -28,7 +28,6 @@ public class APITest{
 	@Test
 	public void APITest1() throws IllegalArgumentException, JSONException, InvalidFormatException, IOException  {
 		Log.info("Starting API Test");
-		RestAssuredService restAssuredService = new RestAssuredService();
 
 		Map<String, String> headers = new HashMap<>();
 		Map<String, String> queryParams = new HashMap<>();
