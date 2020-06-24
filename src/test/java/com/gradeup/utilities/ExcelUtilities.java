@@ -248,8 +248,6 @@ public class ExcelUtilities {
 	 */
 	public static boolean WriteExcelDataInBulk (String excelFilePath, String sheetName, String key, Map<String, Integer> columnIndexing, List<Map<String, String>> data) throws IOException, InvalidFormatException {
 
-		File file;
-
 		int sheetNumber = getSheetIndex(excelFilePath, sheetName);
 		
 		InputStream inp = new FileInputStream(excelFilePath); 
