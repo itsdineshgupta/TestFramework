@@ -20,12 +20,12 @@
 
 			<class name="com.gradeup.tests.UITest" />
 			<methods>
-				<exclude name="UITest" />
+				<exclude name="UITest1" />
 			</methods>
 			
 			<class name="com.gradeup.tests.APITest" />
 			<methods>
-				<include name="APITest" />
+				<include name="APITest1" />
 			</methods>
 
 		</classes>

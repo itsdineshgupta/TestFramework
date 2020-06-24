@@ -26,7 +26,7 @@ import com.gradeup.utilities.ExcelUtilities;
 public class APITest{
 
 	@Test
-	public void APITest() throws IllegalArgumentException, JSONException, InvalidFormatException, IOException  {
+	public void APITest1() throws IllegalArgumentException, JSONException, InvalidFormatException, IOException  {
 		Log.info("Starting API Test");
 		RestAssuredService restAssuredService = new RestAssuredService();
 

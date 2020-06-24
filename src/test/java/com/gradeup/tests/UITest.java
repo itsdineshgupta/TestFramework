@@ -23,7 +23,7 @@ import com.gradeup.utilities.ExcelUtilities;
 public class UITest extends BaseTest {
 
 	@Test
-	public void UITest() throws InterruptedException, InvalidFormatException, IOException {
+	public void UITest1() throws InterruptedException, InvalidFormatException, IOException {
 		Log.info("Starting UI Test");
 		
 		//LoginPage loginPage = new LoginPage();
