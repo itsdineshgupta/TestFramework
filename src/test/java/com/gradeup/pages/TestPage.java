@@ -33,7 +33,7 @@ public class TestPage extends BasePage{
 		List<WebElement> button_StartTestList = driver.findElements(buttonList);
 		for(WebElement button: button_StartTestList) {
 			
-			if(button.findElement(By.xpath("./span")).getText().equalsIgnoreCase("Resume Test")) {
+			if(button.findElement(By.xpath("./span")).getText().equalsIgnoreCase("Start Test")) {
 				button.click();
 				return true;
 			}
